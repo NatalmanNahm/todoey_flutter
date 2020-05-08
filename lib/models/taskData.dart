@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'Task.dart';
+import 'task.dart';
 
 class TaskData extends ChangeNotifier{
   List<Task> tasks = [
@@ -7,4 +7,8 @@ class TaskData extends ChangeNotifier{
     Task(name: 'Buy Eggs'),
     Task(name: 'Buy Bread')
   ];
+
+  int get taskCount{
+    return tasks.length;
+  }
 }

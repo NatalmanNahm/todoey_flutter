@@ -4,14 +4,7 @@ import 'package:todoeyflutter/screens/add_task_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:todoeyflutter/models/taskData.dart';
 
-class TasksScreen extends StatefulWidget {
-
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-
+class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +60,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).tasks.length} Tasks',
+                  '${Provider.of<TaskData>(context).taskCount} Tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0
@@ -86,7 +79,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   topRight: Radius.circular(20.0)
                 )
               ),
-              child: TaskList(tasks),
+              child: TaskList(),
             ),
           )
         ],
